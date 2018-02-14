@@ -1,9 +1,9 @@
 missfont.log
-template.aux
-template.bbl
-template.blg
-template.log
-template.out
-template.pdf
-template.synctex.gz
-template.toc
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.toc
