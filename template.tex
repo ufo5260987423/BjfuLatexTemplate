@@ -1,0 +1,167 @@
+\documentclass[UTF8]{ctexart}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%协议：MIT协议（http://opensource.org/licenses/MIT）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%超链接
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+%板式
+\usepackage{geometry}
+%图片
+\usepackage{graphicx}
+%图表标题
+\usepackage{bicaption}
+%子图
+\usepackage{subcaption}
+%页眉页脚控制
+\usepackage{fancyhdr}
+%非汉字字体设置
+\usepackage{fontspec}
+%控制参考文献格式
+\usepackage[square,super, comma, sort&compress, numbers]{natbib}
+%计数器控制
+\usepackage{amsmath}
+%插入代码
+%\usepackage{listings}
+%设置列表格式
+%\usepackage{enumitem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%对于包的使用
+
+%a4纸
+\geometry{a4paper,left=3cm,right=2cm,top=25mm,bottom=25mm}
+
+%1.5倍行距，可能需要用\selectfont
+\linespread{1.5}
+
+%页眉页脚开启
+\pagestyle{fancy}
+%页眉中间：
+\chead{\zihao{-5}\CJKfamily{zhsong}北京林业大学本科毕业论文(设计) } 
+%页眉左边就不要有东西了
+\lhead{} 
+%页眉右边就不要有东西了
+\rhead{}
+%页眉下边的横线宽度：事实上论文规范并没有对此做出规定，但是我们选择遵循常理去除横线。
+\renewcommand{\headrulewidth}{0pt}
+%页脚（含页码）字号：小五号
+\renewcommand{\footnotesize}{\zihao{-5}}  
+%设置正文非汉字的字体为Times New Roman
+\setmainfont{Times New Roman}
+%设置正文非汉字的粗体字体为Times New Roman
+\setsansfont{Times New Roman}
+%设置英文图为Fig，表格为Tab
+\DeclareCaptionOption{english}[]{
+\renewcommand\figurename{Fig.}
+\renewcommand\tablename{Tab}}
+\captionsetup[bi-second]{english}
+%一定要在这里声明space，直接声明不好使，小五号
+\captionsetup{font={footnotesize,bf},labelsep=space}
+%设置图片编号随着章节自动清零
+\numberwithin{figure}{section}
+%设置公式编号随着章节自动清零
+\numberwithin{equation}{section}
+%定义图的编号为章节号码.序号
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+%定义公式的编号为章节号码.序号
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+%改变figure为图
+\renewcommand{\figureautorefname}{图}
+%改变equation为式
+\renewcommand{\equationautorefname}{式}
+\renewcommand{\subsectionautorefname}{节}
+\renewcommand{\subsectionautorefname}{章}
+%section另起一页，宋体四号加粗居中
+\CTEXsetup[format={\pagebreak\centering\zihao{4}\CJKfamily{zhsong}\textbf}]{section}
+%subsection宋体小四号加粗
+\CTEXsetup[format={\zihao{-4}\CJKfamily{zhsong}\textbf}]{subsection}
+
+%代码报lsting格式
+%\lstset{numbers=none,
+%  numberstyle=\scriptsize,
+%  frame=lines,
+%  flexiblecolumns=false,
+%  language=Python,
+%  basicstyle=\ttfamily\small,
+%  breaklines=true,
+%  extendedchars=true,
+%  escapechar=\%,
+%  texcl=true,
+%  showstringspaces=true,
+%  keywordstyle=\bfseries,
+%  tabsize=4}
+
+%%%%
+%以下内容理工农医类专业请直接注释掉
+%设置section计数器为汉字
+\CTEXsetup[number={\chinese{section}}]{section}
+\CTEXsetup[name={（,）}]{subsection}
+\CTEXsetup[number={\chinese{subsection}}]{subsection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{北京林业大学本科毕业论文\\模板}
+\author{作者}
+%\date{\today}
+
+%使用了坑爹的国标中文文献格式GBT7714-2005NLang-UTF8
+\bibliographystyle{GBT7714-2005NLang-UTF8}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%自标题页开始使用罗马数字作为页码
+\pagenumbering{Roman}
+\begin{titlepage}
+%中文标题
+\begin{center}
+%中文标题，分行用双反斜线表示
+\zihao{-3}\CJKfamily{zhhei}\textbf{北京林业大学本科毕业论文\\模板}\\
+%中文作者名，空格用单反斜线或者回车行表示
+\zihao{-4}班级\ 作者\\
+%中文指导教师名，空格用单反斜线表示
+\zihao{-4}指导老师\ 教师\\
+\zihao{4}\CJKfamily{zhsong}\textbf{摘要}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%中文摘要正文
+\zihao{5}\CJKfamily{zhkai}根据《北京林业大学论文撰写规范及模板》， 本科生毕业论文必须符合相关规定。 一方面， 这些规定不尽不实， 存在着相当多的错漏； 另一方面， 即将毕业的学生实在很难静下来调整论文格式。 因此， 我们一起构建了本模板。
+\\\\
+%中文关键词
+\zihao{5}\CJKfamily{zhsong}\textbf{关键词：毕业论文， 论文模板， 北京林业大学， 本科生}
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%英文标题
+\begin{center}
+%英文标题，分行用双反斜线表示
+\zihao{-3}\textbf{An Bachelor Thesis Template of Beijing Forestry University }\\
+%英文作者名，空格用单反斜线或者回车行表示
+\zihao{-4}Class\ Author\\
+%英文指导教师名，空格用单反斜线表示
+\zihao{-4}Supervisor\ Your Teacher\\
+\zihao{4}\textbf{Abstract}
+\end{center}
+
+%英文摘要正文
+\zihao{5}In Beijing Forestry University, bachelor thesis have to meet some requirements. But relevant regulation is not consistency and complete. And it's hard for undergraduate to calm down and proofread their newly completed work. So, we construct this template in order to reduce their cost. 
+\\\\
+%英文关键词
+\zihao{5}\textbf{Key Words：Thesis， Template， Beijing Forestry University， Bachelor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{titlepage}
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+%自正文开始，使用阿拉伯数字且重新开始页码
+\pagenumbering{arabic}
+
+\section{快速开始}
+\cite{刘海洋2013LATEX}
+
+\section{作者名单及特别鸣谢}
+王政
+
+鸣谢马起园先生， 马先生作为ApTex的作者在2015年本模板的早期编写阶段给出了宝贵建议， 给予了极大的帮助。
+
+\bibliography{database}
+\end{document}
