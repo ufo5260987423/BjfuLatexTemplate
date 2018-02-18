@@ -61,11 +61,8 @@
 \renewcommand{\footnotesize}{\zihao{-5}}  
 
 %论文中出现的所有数字和字母如无特殊要求都用Times New Roman体。
-
 %设置正文非汉字的字体为Times New Roman
 \setmainfont{Times New Roman}
-%设置正文非汉字的粗体字体为Times New Roman
-\setsansfont{Times New Roman}
 
 %设置英文图为Fig，表格为Tab
 \DeclareCaptionOption{english}[]{
@@ -85,6 +82,8 @@
 \renewcommand{\thefigure}{\thesection.\arabic{figure}}
 %定义公式的编号为章节号码.序号
 \renewcommand{\theequation}{\thesection.\arabic{equation}}
+%定义条的编号为序号
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
 
 %改变figure为图
 \renewcommand{\figureautorefname}{图}
@@ -92,7 +91,8 @@
 %改变equation为式
 \renewcommand{\equationautorefname}{式}
 \renewcommand{\subsectionautorefname}{节}
-\renewcommand{\subsectionautorefname}{章}
+\renewcommand{\sectionautorefname}{章}
+\renewcommand{\subsubsectionautorefname}{条}
 
 %章标题：四号宋体加粗
 %section另起一页，宋体四号加粗居中
@@ -101,6 +101,9 @@
 %节标题：小四号宋体加粗
 %subsection宋体小四号加粗
 \CTEXsetup[format={\zihao{-4}\CJKfamily{zhsong}\textbf}]{subsection}
+
+%subsubsection宋体小四号加粗
+\CTEXsetup[format={\zihao{5}\CJKfamily{zhsong}\textbf}]{subsubsection}
 
 
 \bibliographystyle{GBT7714-2005NLang-UTF8}
